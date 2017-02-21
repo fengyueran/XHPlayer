@@ -13,4 +13,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
+/**
+ 播放
+ */
+- (void)play;
+
 @end

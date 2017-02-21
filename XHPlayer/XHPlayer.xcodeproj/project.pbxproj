@@ -16,6 +16,7 @@
 		8245364D1E5BD9F1006509FD /* XHPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8245364C1E5BD9F1006509FD /* XHPlayerTests.m */; };
 		824536581E5BD9F1006509FD /* XHPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824536571E5BD9F1006509FD /* XHPlayerUITests.m */; };
 		824536671E5BDA6B006509FD /* XHPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 824536661E5BDA6B006509FD /* XHPlayer.m */; };
+		824536AB1E5C23EA006509FD /* XHPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 824536AA1E5C23EA006509FD /* XHPlayer.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		824536591E5BD9F1006509FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824536651E5BDA6B006509FD /* XHPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPlayer.h; sourceTree = "<group>"; };
 		824536661E5BDA6B006509FD /* XHPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPlayer.m; sourceTree = "<group>"; };
+		824536AA1E5C23EA006509FD /* XHPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XHPlayer.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +110,10 @@
 				824536361E5BD9F1006509FD /* AppDelegate.m */,
 				824536381E5BD9F1006509FD /* ViewController.h */,
 				824536391E5BD9F1006509FD /* ViewController.m */,
+				824536AC1E5C2452006509FD /* XHPlayer */,
 				824536651E5BDA6B006509FD /* XHPlayer.h */,
 				824536661E5BDA6B006509FD /* XHPlayer.m */,
+				824536AA1E5C23EA006509FD /* XHPlayer.bundle */,
 				8245363B1E5BD9F1006509FD /* Main.storyboard */,
 				8245363E1E5BD9F1006509FD /* Assets.xcassets */,
 				824536401E5BD9F1006509FD /* LaunchScreen.storyboard */,
@@ -143,6 +147,13 @@
 				824536591E5BD9F1006509FD /* Info.plist */,
 			);
 			path = XHPlayerUITests;
+			sourceTree = "<group>";
+		};
+		824536AC1E5C2452006509FD /* XHPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = XHPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				TargetAttributes = {
 					8245362E1E5BD9F1006509FD = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6J4Z9E376B;
 						ProvisioningStyle = Automatic;
 					};
 					824536471E5BD9F1006509FD = {
@@ -251,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824536AB1E5C23EA006509FD /* XHPlayer.bundle in Resources */,
 				824536421E5BD9F1006509FD /* LaunchScreen.storyboard in Resources */,
 				8245363F1E5BD9F1006509FD /* Assets.xcassets in Resources */,
 				8245363D1E5BD9F1006509FD /* Main.storyboard in Resources */,
@@ -428,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6J4Z9E376B;
 				INFOPLIST_FILE = XHPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snow.XHPlayer;
@@ -439,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6J4Z9E376B;
 				INFOPLIST_FILE = XHPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snow.XHPlayer;

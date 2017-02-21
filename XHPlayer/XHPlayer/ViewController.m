@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "XHPlayer.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    XHPlayer *player = [[XHPlayer alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+    [self.view addSubview:player];
+    [player play];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
