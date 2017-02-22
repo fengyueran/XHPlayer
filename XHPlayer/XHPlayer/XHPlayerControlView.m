@@ -28,6 +28,9 @@
 @property (nonatomic, strong) ASValueTrackingSlider   *videoSlider;
 /** 视频总时长label */
 @property (nonatomic, strong) UILabel                 *totalTimeLabel;
+
+/** 是否拖拽slider控制播放进度 */
+@property (nonatomic, assign, getter=isDragged) BOOL  dragged;
 @end
 
 @implementation XHPlayerControlView
@@ -263,13 +266,13 @@
     // duration 总时长
     NSInteger durMin = totalTime / 60;//总秒
     NSInteger durSec = totalTime % 60;//总分钟
-//    if (!self.isDragged) {
+    if (!self.isDragged) {
         // 更新slider
         self.videoSlider.value           = value;
 //        self.bottomProgressView.progress = value;
         // 更新当前播放时间
         self.currentTimeLabel.text       = [NSString stringWithFormat:@"%02zd:%02zd", proMin, proSec];
-//    }
+    }
     // 更新总时间
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", durMin, durSec];
 }
@@ -306,31 +309,32 @@
     }
 }
 
-// 不做处理，只是为了滑动slider其他地方不响应其他手势
+/**
+ UISlider swipeAction
+ */
 - (void)panRecognizer:(UIPanGestureRecognizer *)pan {
     if ([pan.view isKindOfClass:[UISlider class]]) {
-        //               [_videoSlider setThumbImage:ZFPlayerImage(@"ZFPlayer_brightness@2x") forState:UIControlStateNormal];
         UISlider *slider = (UISlider *)pan.view;
         CGPoint point = [pan locationInView:slider];
         CGFloat length = slider.frame.size.width;
         // 视频跳转的value
         CGFloat tapValue = point.x / length;
-//        switch (pan.state) {
-//            case UIGestureRecognizerStateBegan:
+        switch (pan.state) {
+            case UIGestureRecognizerStateBegan:
 //                [self zf_playerCancelAutoFadeOutControlView];
-//                self.dragged = YES;
-//                slider.value = tapValue;
-//                break;
-//            case UIGestureRecognizerStateChanged:
-//                slider.value = tapValue;
-//                break;
-//            case UIGestureRecognizerStateEnded:
-//                //                   self.dragged = NO;
-//                [self.delegate zf_controlView:self progressSliderTap:tapValue];
-//                break;
-//            default:
-//                break;
-//        }
+                self.dragged = YES;
+                slider.value = tapValue;
+                break;
+            case UIGestureRecognizerStateChanged:
+                slider.value = tapValue;
+                break;
+            case UIGestureRecognizerStateEnded:
+                self.dragged = NO;
+                [self.delegate progressSliderTap:tapValue];
+                break;
+            default:
+                break;
+        }
     }
 }
 
