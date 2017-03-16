@@ -9,6 +9,9 @@
 #import "XHPlayerControlView.h"
 #import "ASValueTrackingSlider.h"
 #import <Masonry.h>
+
+
+
 @interface XHPlayerControlView ()<UIGestureRecognizerDelegate>
 
 /** 顶部操作工具栏 */
@@ -53,6 +56,7 @@
          [self.bottomImageView addSubview:self.videoSlider];
         [self.bottomImageView addSubview:self.totalTimeLabel];
         [self makeSubViewsConstraints];
+        
     }
     return self;
 }
@@ -193,7 +197,6 @@
     }];
     
     [self.bottomImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        self.bottomImageView.backgroundColor = [UIColor greenColor];
         make.leading.trailing.bottom.equalTo(self);
         make.height.mas_equalTo(70);
     }];
@@ -211,19 +214,19 @@
     }];
 
     [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        self.totalTimeLabel.backgroundColor = [UIColor redColor];
         make.trailing.bottom.equalTo(self);
         make.width.height.mas_equalTo(43);
     }];
     
     [self.videoSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        self.videoSlider.backgroundColor = [UIColor greenColor];
         make.leading.equalTo(self.currentTimeLabel.mas_trailing).offset(4);
         make.trailing.equalTo(self.totalTimeLabel.mas_leading).offset(-4);
         make.centerY.equalTo(self.currentTimeLabel.mas_centerY).offset(-1);
         make.height.mas_equalTo(90);
     }];
 }
+
+
 
 - (void)playOrPause:(UIButton *)sender {
         sender.selected = !sender.selected;
@@ -276,6 +279,8 @@
     // 更新总时间
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", durMin, durSec];
 }
+
+
 
 
 /**

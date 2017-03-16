@@ -21,5 +21,10 @@
     [self.view addSubview:player];
     [player play];
 }
+//- (BOOL)shouldAutorotate{
+//    
+//    return NO;
+//    
+//}
 
 @end
